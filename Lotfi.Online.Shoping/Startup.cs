@@ -19,8 +19,10 @@ namespace Lotfi.OnlineShoping
         // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
         public void ConfigureServices(IServiceCollection services)
         {
+            #region MyRegion
             //services.AddDbContext<MyShopContext>(options =>
-            //    options.UseSqlServer("Server=(localdb)\\mssqllocaldb;Database=MyShop;Trusted_Connection=True;MultipleActiveResultSets=true"));
+            //    options.UseSqlServer("Server=(localdb)\\mssqllocaldb;Database=MyShop;Trusted_Connection=True;MultipleActiveResultSets=true")); 
+            #endregion
             services.AddDbContext<MyShopContext>(options =>
                 options.UseSqlServer("Server=BAMDAD-LOTFI; Initial Catalog=MyShop; Integrated Security=true", b => b.MigrationsAssembly("Lotfi.OnlineShoping")));
         }
