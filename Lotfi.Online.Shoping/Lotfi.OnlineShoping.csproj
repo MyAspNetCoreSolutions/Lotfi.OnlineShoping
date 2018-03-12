@@ -15,7 +15,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Lotfi.DataAccessLayer\Lotfi.DataAccessLayer.csproj" />
+    <ProjectReference Include="..\Lotfi.OnlineShoping.Domain.Entities\Lotfi.OnlineShoping.Domain.Entities.csproj" />
+    <ProjectReference Include="..\Lotfi.OnlineShoping.Infrastructure.DataAccess\Lotfi.OnlineShoping.Infrastructure.DataAccess.csproj" />
   </ItemGroup>
 
 </Project>

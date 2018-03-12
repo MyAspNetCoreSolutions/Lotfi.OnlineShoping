@@ -8,14 +8,26 @@ namespace Lotfi.OnlineShoping.Infrastructure.AppService
 {
     public class PeymentService : IPeymentService
     {
+        #region Fileds
         IPeymentRepository _peymentRepository;
+        #endregion
+
+        #region Constractor
         public PeymentService(IPeymentRepository peymentRepository)
         {
             this._peymentRepository = peymentRepository;
         }
+        #endregion
+
+        #region Property
+        #endregion
+
+        #region Methods
         public void Add(Peyment peyment)
         {
             _peymentRepository.Insert(peyment);
         }
+        #endregion
+
     }
 }

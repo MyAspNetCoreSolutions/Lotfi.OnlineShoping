@@ -1,9 +1,10 @@
-﻿using System;
+﻿using Lotfi.OnlineShoping.Domain.Entities;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace Lotfi.OnlineShoping.Domain.Entities
+namespace Lotfi.OnlineShoping.Infrastructure.DataAccess
 {
     public static class DbInitializer
     {

@@ -4,9 +4,9 @@ using System.Text;
 
 namespace Lotfi.OnlineShoping.Domain.Entities
 {
-    public class Order
+    public class Order:BaseEntity
     {
-        public int ID { get; set; }
+        
         public int CustomerID { get; set; }
         public int ProductID { get; set; }
         public DateTime OrderDate { get; set; }

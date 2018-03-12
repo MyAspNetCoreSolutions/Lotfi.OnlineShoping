@@ -1,10 +1,11 @@
 ﻿using JetBrains.Annotations;
+using Lotfi.OnlineShoping.Domain.Entities;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace Lotfi.OnlineShoping.Domain.Entities
+namespace Lotfi.OnlineShoping.Infrastructure.DataAccess
 {
     public class MyShopContext : DbContext
     {
@@ -12,6 +13,7 @@ namespace Lotfi.OnlineShoping.Domain.Entities
         {
             
         }
+
         public DbSet<Category> Categories { get; set; }
         public DbSet<Customer> Customers { get; set; }
         public DbSet<Order> Orders { get; set; }
@@ -26,12 +28,15 @@ namespace Lotfi.OnlineShoping.Domain.Entities
             modelBuilder.Entity<Peyment>().ToTable("Peyment");
             modelBuilder.Entity<Product>().ToTable("Product");
         }
+
+        #region Commented Code
         //protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         //{
-            
+
         //    optionsBuilder.UseSqlServer("Server=.\\BAMDAD-LOTFI; Initial Catalog=MyShop; Integrated Security=true", b => b.MigrationsAssembly("Lotfi.DataAccessLayer"));
         //    base.OnConfiguring(optionsBuilder); 
-        //}
+        //} 
+        #endregion
 
     }
 }

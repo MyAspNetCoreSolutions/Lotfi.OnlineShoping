@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Lotfi.OnlineShoping.Domain.Entities
 {
-    public class Customer
+    public class Customer:BaseEntity
     {
         public int ID { get; set; }
         public string UserName { get; set; }

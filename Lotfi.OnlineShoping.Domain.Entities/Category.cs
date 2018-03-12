@@ -4,9 +4,8 @@ using System.Text;
 
 namespace Lotfi.OnlineShoping.Domain.Entities
 {
-    public class Category
+    public class Category:BaseEntity
     {
-        public int CategoryID { get; set; }
         public string CategoryName { get; set; }
         public int? ParentID { get; set; }
 
