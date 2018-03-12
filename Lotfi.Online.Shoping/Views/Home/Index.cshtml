@@ -1,0 +1,36 @@
+﻿@model IEnumerable<Lotfi.OnlineShoping.Domain.Entities.Customer>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Leyout.cshtml";
+}
+
+<h2>Hello from Home Controller</h2>
+
+
+<table class="table">
+    <tr>
+        <th>Course </th>
+        <th>Grade</th>
+        <th>Grade</th>
+        
+        <th>Grade</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.FirsName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.LastName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.RegisterDate)
+        </td>
+        
+        <td>
+            @Html.DisplayFor(modelItem => item.Id)
+        </td>
+    </tr>
+    }
+</table>

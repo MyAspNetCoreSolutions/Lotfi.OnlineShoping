@@ -6,8 +6,9 @@ namespace Lotfi.OnlineShoping.Domain.Contract.Repositories
 {
     public interface IBaseRepositpry<TEntity>
     {
-        void Insert(TEntity entity);
+        IEnumerable<TEntity> GetAll();
         TEntity Find(int id);
+        void Insert(TEntity entity);
         void Update(TEntity entity);
         void Delete(TEntity entity);
     }

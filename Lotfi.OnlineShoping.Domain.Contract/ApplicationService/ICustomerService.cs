@@ -8,5 +8,7 @@ namespace Lotfi.OnlineShoping.Domain.Contract.ApplicationService
     public interface ICustomerService
     {
         void Add(Customer customer);
+        IEnumerable<Customer> Get();
+        Customer Find(int id);
     }
 }

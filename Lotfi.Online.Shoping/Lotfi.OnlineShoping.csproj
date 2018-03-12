@@ -12,10 +12,13 @@
 
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.All" Version="2.0.5" />
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.0.2" />
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\Lotfi.OnlineShoping.Domain.Contract\Lotfi.OnlineShoping.Domain.Contract.csproj" />
     <ProjectReference Include="..\Lotfi.OnlineShoping.Domain.Entities\Lotfi.OnlineShoping.Domain.Entities.csproj" />
+    <ProjectReference Include="..\Lotfi.OnlineShoping.Infrastructure.AppService\Lotfi.OnlineShoping.Infrastructure.AppService.csproj" />
     <ProjectReference Include="..\Lotfi.OnlineShoping.Infrastructure.DataAccess\Lotfi.OnlineShoping.Infrastructure.DataAccess.csproj" />
   </ItemGroup>
 

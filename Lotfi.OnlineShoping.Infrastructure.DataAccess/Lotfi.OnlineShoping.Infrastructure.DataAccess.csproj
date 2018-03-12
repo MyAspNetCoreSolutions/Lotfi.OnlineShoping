@@ -11,7 +11,12 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\Lotfi.OnlineShoping.Domain.Contract\Lotfi.OnlineShoping.Domain.Contract.csproj" />
     <ProjectReference Include="..\Lotfi.OnlineShoping.Domain.Entities\Lotfi.OnlineShoping.Domain.Entities.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Repositories\" />
   </ItemGroup>
 
 </Project>

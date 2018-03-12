@@ -27,6 +27,16 @@ namespace Lotfi.OnlineShoping.Infrastructure.AppService
         {
             _customerRepository.Insert(customer);
         }
+
+        public Customer Find(int id)
+        {
+            return _customerRepository.Find(id);
+        }
+
+        public IEnumerable<Customer> Get()
+        {
+            return _customerRepository.GetAll();
+        }
         #endregion
     }
 }

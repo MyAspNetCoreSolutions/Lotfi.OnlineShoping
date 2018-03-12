@@ -2,7 +2,9 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Lotfi.OnlineShoping.Domain.Contract.ApplicationService;
 using Lotfi.OnlineShoping.Domain.Entities;
+using Lotfi.OnlineShoping.Infrastructure.AppService;
 using Lotfi.OnlineShoping.Infrastructure.DataAccess;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -16,6 +18,11 @@ namespace Lotfi.OnlineShoping
     //this is for test commit all
     public class Startup
     {
+        IConfiguration Configuration;
+        public Startup(IConfiguration configuration)
+        {
+            Configuration = configuration;
+        }
         // This method gets called by the runtime. Use this method to add services to the container.
         // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
         public void ConfigureServices(IServiceCollection services)
@@ -23,9 +30,16 @@ namespace Lotfi.OnlineShoping
             #region MyRegion
             //services.AddDbContext<MyShopContext>(options =>
             //    options.UseSqlServer("Server=(localdb)\\mssqllocaldb;Database=MyShop;Trusted_Connection=True;MultipleActiveResultSets=true")); 
-            #endregion
+
             services.AddDbContext<MyShopContext>(options =>
                 options.UseSqlServer("Server=BAMDAD-LOTFI; Initial Catalog=MyShop; Integrated Security=true", b => b.MigrationsAssembly("Lotfi.OnlineShoping")));
+            #endregion
+
+            //services.AddDbContext<MyShopContext>(options =>
+            //   options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
+            services.AddScoped(typeof(ICustomerRepository), typeof(CustomerRepository));
+            services.AddTransient<ICustomerService, CustomerService>();
+            services.AddMvc();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -35,11 +49,9 @@ namespace Lotfi.OnlineShoping
             {
                 app.UseDeveloperExceptionPage();
             }
-
-            app.Run(async (context) =>
-            {
-                await context.Response.WriteAsync("Hello World!");
-            });
+            app.UseDatabaseErrorPage();
+            app.UseStaticFiles();
+            app.UseMvcWithDefaultRoute();
         }
     }
 }

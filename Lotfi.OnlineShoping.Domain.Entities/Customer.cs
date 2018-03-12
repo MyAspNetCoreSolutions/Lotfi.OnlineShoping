@@ -6,7 +6,6 @@ namespace Lotfi.OnlineShoping.Domain.Entities
 {
     public class Customer:BaseEntity
     {
-        public int ID { get; set; }
         public string UserName { get; set; }
         public string FirsName { get; set; }
         public string LastName { get; set; }
