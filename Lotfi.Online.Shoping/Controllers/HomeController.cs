@@ -15,10 +15,12 @@ namespace Lotfi.OnlineShoping.Controllers
         {
             _customerService = customerService;
         }
+
         public IActionResult Index()
         {
             return View(_customerService.Get());
         }
+
         [TypeFilter(typeof(MyExceptionFilterAttribute))]
         public IActionResult Index1()
         {
