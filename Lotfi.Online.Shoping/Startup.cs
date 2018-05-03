@@ -39,6 +39,8 @@ namespace Lotfi.OnlineShoping
             //   options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
             services.AddScoped(typeof(ICustomerRepository), typeof(CustomerRepository));
             services.AddTransient<ICustomerService, CustomerService>();
+            services.AddScoped(typeof(IMyExceptionRepository), typeof(MyExceptionRepository));
+
             services.AddMvc();
         }
 
