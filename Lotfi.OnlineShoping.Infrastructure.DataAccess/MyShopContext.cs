@@ -19,6 +19,8 @@ namespace Lotfi.OnlineShoping.Infrastructure.DataAccess
         public DbSet<Order> Orders { get; set; }
         public DbSet<Peyment> Peyments { get; set; }
         public DbSet<Product> Products { get; set; }
+        public DbSet<VisitorLog> VisitorLogs { get; set; }
+        public DbSet<MyException> MyExceptions { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {

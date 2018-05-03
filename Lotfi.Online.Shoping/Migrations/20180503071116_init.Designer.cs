@@ -11,8 +11,8 @@ using System;
 namespace Lotfi.OnlineShoping.Migrations
 {
     [DbContext(typeof(MyShopContext))]
-    [Migration("20180312085354_lotfiOlineShopUpdate")]
-    partial class lotfiOlineShopUpdate
+    [Migration("20180503071116_init")]
+    partial class init
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -63,6 +63,34 @@ namespace Lotfi.OnlineShoping.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Customer");
+                });
+
+            modelBuilder.Entity("Lotfi.OnlineShoping.Domain.Entities.MyException", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<string>("ActionName");
+
+                    b.Property<string>("ControllerName");
+
+                    b.Property<DateTime>("CreatedTime");
+
+                    b.Property<DateTime>("Date");
+
+                    b.Property<string>("InnerMessage");
+
+                    b.Property<bool>("IsReaded");
+
+                    b.Property<string>("Message");
+
+                    b.Property<string>("Model");
+
+                    b.Property<DateTime>("UpdatedTime");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("MyExceptions");
                 });
 
             modelBuilder.Entity("Lotfi.OnlineShoping.Domain.Entities.Order", b =>
@@ -131,6 +159,30 @@ namespace Lotfi.OnlineShoping.Migrations
                     b.HasIndex("CategoryID");
 
                     b.ToTable("Product");
+                });
+
+            modelBuilder.Entity("Lotfi.OnlineShoping.Domain.Entities.VisitorLog", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<string>("Action");
+
+                    b.Property<string>("Controller");
+
+                    b.Property<string>("CookieId");
+
+                    b.Property<DateTime>("CreatedTime");
+
+                    b.Property<string>("Description");
+
+                    b.Property<DateTime>("UpdatedTime");
+
+                    b.Property<string>("Url");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("VisitorLogs");
                 });
 
             modelBuilder.Entity("Lotfi.OnlineShoping.Domain.Entities.Order", b =>

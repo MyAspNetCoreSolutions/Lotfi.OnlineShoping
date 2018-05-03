@@ -7,6 +7,7 @@
   <ItemGroup>
     <ProjectReference Include="..\Lotfi.OnlineShoping.Domain.Contract\Lotfi.OnlineShoping.Domain.Contract.csproj" />
     <ProjectReference Include="..\Lotfi.OnlineShoping.Domain.Entities\Lotfi.OnlineShoping.Domain.Entities.csproj" />
+    <ProjectReference Include="..\Lotfi.OnlineShoping.Infrastructure.DataAccess\Lotfi.OnlineShoping.Infrastructure.DataAccess.csproj" />
   </ItemGroup>
 
 </Project>
