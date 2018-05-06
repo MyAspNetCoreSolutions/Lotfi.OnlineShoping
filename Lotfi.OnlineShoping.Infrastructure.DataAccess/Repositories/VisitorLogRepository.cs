@@ -42,6 +42,7 @@ namespace Lotfi.OnlineShoping.Infrastructure.DataAccess
         public void Insert(VisitorLog entity)
         {
             _context.VisitorLogs.Add(entity);
+            this.Save();
         }
 
         public void Update(VisitorLog entity)

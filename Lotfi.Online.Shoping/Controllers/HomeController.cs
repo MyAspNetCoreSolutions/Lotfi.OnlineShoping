@@ -8,6 +8,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace Lotfi.OnlineShoping.Controllers
 {
+    
     public class HomeController : Controller
     {
         ICustomerService _customerService;

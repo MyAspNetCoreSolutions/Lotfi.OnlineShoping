@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Lotfi.OnlineShoping.Domain.Contract.ApplicationService;
 using Lotfi.OnlineShoping.Domain.Entities;
+using Lotfi.OnlineShoping.Filters;
 using Lotfi.OnlineShoping.Infrastructure.AppService;
 using Lotfi.OnlineShoping.Infrastructure.DataAccess;
 using Microsoft.AspNetCore.Builder;
@@ -36,11 +37,17 @@ namespace Lotfi.OnlineShoping
             #endregion
 
             //services.AddDbContext<MyShopContext>(options =>
-            //   options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
+            //options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
             services.AddScoped(typeof(ICustomerRepository), typeof(CustomerRepository));
             services.AddTransient<ICustomerService, CustomerService>();
             services.AddScoped(typeof(IMyExceptionRepository), typeof(MyExceptionRepository));
+            services.AddScoped(typeof(IVistorLogService), typeof(VisitorLogService));
 
+            //services.AddMvc(options =>
+            //{
+            //    options.Filters.Add(typeof(LogVisitorsFilter)); // by type
+            //    //options.Filters.Add(new LogVisitorsFilter()); // an instance
+            //});
             services.AddMvc();
         }
 

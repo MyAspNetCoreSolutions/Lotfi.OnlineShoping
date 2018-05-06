@@ -27,6 +27,8 @@ namespace Lotfi.OnlineShoping.Infrastructure.AppService
         public void Add(VisitorLog VisitorLog)
         {
             _VisitorLogRepository.Insert(VisitorLog);
+            
+            
         }
         #endregion
     }
